@@ -8,6 +8,12 @@ const HtmlWebPackPluginConfig = new HtmlWebPackPlugin({
 
 
 module.exports = {
+    entry:[
+        './src/js/start.js'
+    ],
+    entry:[
+        './src/styles/app.css'
+    ],
     module:{
         rules: [
             {
@@ -24,6 +30,10 @@ module.exports = {
                         loader: "html-loader"
                     }
                 ]
+            },
+            {
+                test:/\.css$/,
+                use:['style-loader', 'css-loader']
             }
         ]
         },
